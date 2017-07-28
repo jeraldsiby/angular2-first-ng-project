@@ -1,0 +1,53 @@
+<p>
+  employees works!
+</p>
+
+First name : {{ EmployeesList[0].fname}}
+<br>
+Second name :{{EmployeesList[0].lname}}
+<br>
+<div class="row">
+
+  <div class="col-sm-4">
+    <ul  class="list-group">
+      <li *ngFor= "let employee of EmployeesList" class="list-group-item"> 
+        First Name: {{employee.fname}} <br>
+        Last Name: {{employee.lname}}    
+      </li>
+    </ul>
+  </div>                                  
+
+   <div class="col-sm-6">
+     <ul  class="list-group">
+       <li *ngFor= "let employee of EmployeesList" class="list-group-item"> 
+         First Name: {{employee.fname}} <br>
+         Last Name: {{employee.lname}}   <br>
+         city : {{employee.city}} 
+       </li>
+     </ul>
+  </div>
+
+  <div class="col-sm-8" >
+    <table class="table table-border">
+     <tr >
+       <th> First name </th> 
+       <th> Last name </th>
+       <th> city </th>
+     </tr>
+     <tr *ngFor= "let employee of EmployeesList" 
+             (click)="setActivemEployee(employee)">      
+          <td> {{employee.fname}} </td>
+          <td> {{employee.lname}} </td>
+           <td> {{employee.city}} </td>
+     </tr>
+    </table>
+  </div>
+
+</div>
+<br>
+<employee-create (employeeCreated)="handleemployeecreation($event)"></employee-create>
+<br>
+<employee-details [employee]="activeEmployee"
+                   [project]="project"> </employee-details>
+<!--{{activeEmployee | json}}-->
+
