@@ -1,0 +1,30 @@
+<h1>
+  {{title}}
+</h1>
+<h4>
+<app-home></app-home>
+</h4>
+<!--<h2>
+  {{name}}
+</h2>
+
+<h3>
+<app-about></app-about>
+</h3>
+<h1>
+<app-test></app-test>
+</h1>-->
+<!--<input type="text" value={{name}}>-->
+<p>Property Binding:</p> <h3>  {{name}}</h3>
+<input type="text" [value]="name">   
+<!--property binding -->
+<input type="submit" (click)="logName()"> 
+<input type="button" value="Clear" (click)="Close()"> 
+<!--event binding-->  
+<input type="text" [(ngModel)]="name">   
+<h3> submit Ans: {{name1}}</h3>
+
+First name : {{ employee.fname}}
+<br>
+Second name :{{employee.lname}}
+<br>
